@@ -1,0 +1,59 @@
+<!-- Store this code in 'login.html' file inside the 'templates' folder -->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Login</title>
+	
+		<link  rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap.min.css')}}" />
+		<link href="{{url_for('static', filename='css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+		<link href="{{url_for('static', filename='css/app.min.css')}}" rel="stylesheet" type="text/css"  id="app-stylesheet" />
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	
+		<style>.parent {
+			height: 500px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			
+		  }
+		  
+		  .child {
+			width: 300px;
+			height: 400px;
+			background-color: rgb(255, 255, 255);
+			border-radius: 10px;
+			top: 100px;
+			right: 300px;
+			position: absolute;
+			
+		  }
+		  body {
+  background-image: url("static/images/products/bgi.jpg");
+  background-size: cover;
+}
+		  </style>		
+	</head>
+	<body ></br></br></br></br></br>
+		<div class = "parent">
+			<div class = "child">
+				<div class = "container" >
+							<h2 >SHARELINK</h2>
+							<h3 style = "color: rgb(225, 103, 16);">Login Page</h3></br>
+							<h4>
+							<form action="{{ url_for('login') }}" method="post">
+							<div class="msg">{{ msg }}</div>
+								<input id="username" class="form-control" name="username" type="text" placeholder="Enter Your Username" class="textbox"/></br>								<input id="password"  class="form-control" name="password" type="password" placeholder="Enter Your Password" class="textbox"/></br></br>
+								<input type="submit" class="btn btn-purple btn-rounded width-md waves-effect waves-light" value="Sign In"></br></br>
+							</form>
+						</h4>
+						<p class="bottom">Don't have an account? <a class="bottom" href="{{url_for('register')}}"> Sign Up here</a></p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,128 @@
+<!-- Store this code in 'index.html' file inside the 'templates' folder-->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Dashboard</title>
+	
+		<link  rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap.min.css')}}" />
+		<link href="{{url_for('static', filename='css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+		<link href="{{url_for('static', filename='css/app.min.css')}}" rel="stylesheet" type="text/css"  id="app-stylesheet" />
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> 
+		<style>.navbar {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			
+			height: 50px;
+			padding: 0 20px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			
+  background-image: linear-gradient(to right, #72f41c, #faee12);
+  
+
+		  }
+		  
+		  .navbar-left p {
+			margin: 0;
+			font-size: 18px;
+			font-weight: bold;
+		  }
+		  
+		  .navbar-right a {
+			text-decoration: none;
+			color: #333;
+			font-size: 16px;
+			font-weight: bold;
+		  }
+		  </style>
+		   <style>
+			.row {
+			  display: flex;
+			  justify-content: center;
+			  margin: 20px 0;
+			  border-radius: 20px;
+			}
+			.column {
+			  flex: 25%;
+			  padding: 5px;
+			  border-radius: 20px;
+			}
+			.column:hover {
+			transform: scale(0.9);
+			
+		}
+			img {
+			  width: 100%;
+			  height: auto;
+			  border-radius: 20px;
+			}
+							.nav-item {
+				margin-right: 20px;
+				position: relative;
+				}
+							.nav-item .badge {
+				position: absolute;
+				top: 0;
+				right: -10px;
+				font-size: 10px;
+				color: #fff;
+				background-color: #f00;
+				border-radius: 50%;
+				padding: 2px 5px;
+				}
+				.nav-item i {
+				font-size: 24px;
+				}
+		  </style>
+					
+	</head>
+	<body style="background-image: linear-gradient(to right, #26a4c4, #09fafa);">
+		
+		<nav class="navbar">
+			<div class="navbar-left">
+			  <p>Welcome {{session.username}}!!</p>
+			</div>
+			<a class="nav-item" href="{{ url_for('display_messages')}}">
+				<i class="fa fa-bell"></i>
+				<span class="badge">1</span>
+			  </a>
+			<div class="navbar-right">
+			  <a href="{{ url_for('logout') }}">Logout</a>
+			</div>
+		</nav>
+		<div class="row">
+			<div class="column">
+				<a href = "{{url_for('camera')}}"> <img src="{{url_for('static' , filename = '/images/products/camera1.jpg')}}"  alt="Image 1"></a>				
+			</div>
+			<div class="column">
+				<a href = "{{url_for('laptop')}}"> <img src= "{{url_for('static' , filename = '/images/products/lap1.jpg')}}" alt="Image 5"></a>
+			</div>
+			
+			<div class="column">
+				<a href = "{{url_for('iphone')}}" ><img src="{{url_for('static' , filename = '/images/products/iphone1.jpg')}}" alt="Image 3"></a>
+			</div>
+			<div class="column">
+				<a  href = "{{url_for('phone')}}"><img src= "{{url_for('static' , filename = '/images/products/phone1.jpg')}}" alt="Image 4"></a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="column">
+				<a href = "{{url_for('tops')}}"> <img src= "{{url_for('static' , filename = '/images/products/top1.jpg')}}" alt="Image 5"></a>
+			</div>
+			<div class="column">
+				<a href = "{{url_for('tshirt')}}" ><img src= "{{url_for('static' , filename = '/images/products/tshirt1.jpg')}}" alt="Image 2"></a>
+			</div>
+			
+			<div class="column">
+				<a href = "{{url_for('shoe')}}"> <img src= "{{url_for('static' , filename = '/images/products/shoe1.jpg')}}" alt="Image 5"></a>
+			</div>
+			<div class="column">
+				<a href = "{{url_for('heels')}}"> <img src= "{{url_for('static' , filename = '/images/products/heels1.jpg')}}" alt="Image 5"></a>
+			</div>
+		</div>		
+</body>
+</html>
